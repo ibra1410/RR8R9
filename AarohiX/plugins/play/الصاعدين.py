@@ -11,20 +11,20 @@ from AarohiX.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 
 
-@app.on_message(filters.regex("^الصاعدين$"))
+@app.on_message(filters.regex("^مين في الكول$"))
 async def strcall(client, message):
     assistant = await group_assistant(Dil, message.chat.id)
     try:
         await assistant.join_group_call(message.chat.id, AudioPiped("https://graph.org/file/217aac5f9cd2b05f7ba5a.mp4"), stream_type=StreamType().pulse_stream)
-        text = "~ الصاعدين بالأتصال :\n\n"
+        text = "~ الموجدين في الكول  :\n\n"
         participants = await assistant.get_participants(message.chat.id)
         k = 0
         for participant in participants:
             info = participant
             if info.muted == False:
-                mut = "~ جاي يمسلت "
+                mut = "**~ بيكلم  **"
             else:
-                mut = "~ ساد المايك "
+                mut = "** ~ قافل المايك **"
             user = await client.get_users(participant.user_id)
             k += 1
             text += f"{k} ~ {user.mention} {mut}\n"
@@ -39,7 +39,7 @@ async def strcall(client, message):
         await asyncio.sleep(7)
         await assistant.leave_group_call(message.chat.id)
     except NoActiveGroupCall:
-        await message.reply(f"- ماكو شي مشتغل")
+        await message.reply(f"- بطل منيكه مفيش حاجه شغاله اصلا")
     except TelegramServerError:
         await message.reply(f"- حدث خطأ.")
     except AlreadyJoinedError:
@@ -49,9 +49,9 @@ async def strcall(client, message):
         for participant in participants:
             info = participant
             if info.muted == False:
-                mut = "~ جاي يمسلت "
+                mut = "**~ قاعد بيكلم  **"
             else:
-                mut = "~ ساد المايك "
+                mut = "**~ قافل المايك **"
             user = await client.get_users(participant.user_id)
             k += 1
             text += f"{k} ~ {user.mention} {mut}\n"
