@@ -9,7 +9,7 @@ import config
 )
 async def mmmezat(client, message):
     await message.reply_text(
-        f"""مرحبًا بك عزيزي {message.from_user.mention} في قسم مميزات سورس cr ميوزك\nهنا تكتب الاوامر """,
+        f"""مرحبًا بك عزيزي {message.from_user.mention} في قسم مميزات سورس الميوزك\nهنا تكتب الاوامر """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
