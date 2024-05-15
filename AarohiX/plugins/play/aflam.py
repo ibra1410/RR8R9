@@ -2,7 +2,7 @@
         [InlineKeyboardButton("◁", callback_data="Yrw1 " + str(m.from_user.id))],
         [InlineKeyboardButton("➡️ التالي", callback_data="Yrw3 " + str(m.from_user.id))],
         [InlineKeyboardButton("𝐇𝐎𝐌", callback_data="moslsl " + str(m.from_user.id))],
-        [InlineKeyboardButton("⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")],
+        [InlineKeyboardButton("⌞ dEv BoT ⌝⚡", url=f"https://t.me/X_G9E")],
 """
 
 import asyncio
@@ -11,7 +11,7 @@ from strings import get_command
 from strings.filters import command
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message, CallbackQuery
-from AnonX import app
+from AarohiX import app
 
 
 
